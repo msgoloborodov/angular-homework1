@@ -1,0 +1,7 @@
+.activity-row {
+  cursor: pointer;
+}
+
+a.active {
+  text-decoration: underline;
+}

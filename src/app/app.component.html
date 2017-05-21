@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+
+<div class="element">
+  <div class="element-left">
+    <widget-hotels-list
+      [hotels] = "hotels$ | async"
+      [hotel-types] = "hotelTypes$ | async"
+      (onHotelSelect) = "onHotelSelect($event)"
+      (onHotelTypeChange) = "onHotelTypeChange($event)">
+    </widget-hotels-list>
+  </div>
+  <div class="element-right">
+    <widget-weather
+      [air-temperature] = "selectedHotel?.weather?.airTemperature"
+      [water-temperature] = "selectedHotel?.weather?.waterTemperature">
+    </widget-weather>
+    <widget-social
+      [followers] = "selectedHotel?.social?.followers"
+      [following] = "selectedHotel?.social?.following">
+    </widget-social>
+  </div>
+  <div class="clear"> </div>
+</div>
+
+<div class="copy-right">
+  {{copyright}}
+</div>
